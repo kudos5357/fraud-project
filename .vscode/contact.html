@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fraud Awareness Portal</title>
+    <link rel="stylesheet" href="open.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 960px;
+            width: 100%;
+            padding: 20px;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #00bfff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #00bfff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1e90ff;
+        }
+        .section {
+        p {
+            line-height: 1.6;
+            text-align: center;
+        }
+        a {
+            color: #00bfff;
+        }
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need assistance, please fill out the form below.</p>
+
+        <form action="submit_contact.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+
+        <div class="section">
+            <h2>Report Suspicious Activity</h2>
+            <p>If you suspect fraudulent activity, please report it immediately. Your vigilance helps protect everyone.</p>
+            <p>Contact us at <a href="mailto:info@fraudprevention.org">info@fraudprevention.org</a> or call us at +25471572435.</p>
+        </div>
+
+        <div class="section">
+            <p>Thank you for reaching out to us. We value your feedback and will get back to you as soon as possible.</p>
+        </div>
+    </div>
+</body>
+</html>

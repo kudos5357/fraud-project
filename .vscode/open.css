@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
+  padding-top: 80px; /* Prevents sticky header from overlapping content */
 }
 
 .container {

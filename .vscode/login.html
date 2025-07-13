@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fraud Awareness Portal</title>
+    <link rel="stylesheet" href="open.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 960px;
+            width: 100%;
+            padding: 20px;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #00bfff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #00bfff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1e90ff;
+        }
+        .success-message {
+            color: #4CAF50;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1a1a1a;
+            border-radius: 5px;
+        }
+        .error-message {
+            color: #f44336;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1a1a1a;
+            border-radius: 5px;
+        }
+        .section {
+            margin-top: 40px;
+        }
+        p {
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+        <p>Welcome back! Please enter your credentials to access the Fraud Awareness Portal.</p>
+
+        <form action="authenticate.php" method="POST">
+            <?php if (isset($_GET['error'])): ?>
+            <div class="error-message">Invalid username or password. Please try again.</div>
+            <?php endif; ?>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit" class="button">Login</button>
+            <p class="forgot-password"><a href="forgot_password.html">Forgot password?</a></p>
+        </form>
+
+        <div class="section">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+</body>
+</html>
