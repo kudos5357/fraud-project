@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - Fraud Awareness Portal</title>
+    <link rel="stylesheet" href="open.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 960px;
+            width: 100%;
+            padding: 20px;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #00bfff;
+        }
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .nav-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .nav-links li {
+            padding: 5px 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .question {
+            background-color: #222;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #00bfff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0084b4;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fraud Awareness Quizzes</h1>
+        <p>Test your knowledge about online fraud with these interactive quizzes.</p>
+        <div class="nav-links">
+            <ul>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="videos.html">Video Resources</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="contact.html">Report Suspicious Activity</a></li>
+                <li><a href="report.html">System Feedback</a></li>
+            </ul>
+        </div>
+
+        <div class="section quiz">
+            <h2>Phishing Awareness Quiz</h2>
+            <form id="quiz-form">
+                <div class="question">
+                    <p>1. What is the most common method used in phishing attacks?</p>
+                    <input type="radio" name="q1" id="q1a" value="a">
+                    <label for="q1a">a) Phone calls</label><br>
+                    <input type="radio" name="q1" id="q1b" value="b">
+                    <label for="q1b">b) Fake emails</label><br>
+                    <input type="radio" name="q1" id="q1c" value="c">
+                    <label for="q1c">c) Social media posts</label><br>
+                </div>
+
+                <div class="question">
+                    <p>2. What should you do if you receive a suspicious email asking for personal information?</p>
+                    <input type="radio" name="q2" id="q2a" value="a">
+                    <label for="q2a">a) Reply with the information</label><br>
+                    <input type="radio" name="q2" id="q2b" value="b">
+                    <label for="q2b">b) Delete it immediately</label><br>
+                    <input type="radio" name="q2" id="q2c" value="c">
+                    <label for="q2c">c) Report it to your IT department</label><br>
+                </div>
+
+                <button type="button" onclick="checkAnswers()">Submit Answers</button>
+            </form>
+            <div id="results"></div>
+        </div>
+
+        <div class="section">
+            <p>For any inquiries, contact us at <a href="mailto:info@fraudprevention.org">info@fraudprevention.org</a>.</p>
+            <p>Thank you for using our Fraud Awareness Portal.</p>
+        </div>
+        <script>
+            function checkAnswers() {
+                const answers = {
+                    q1: "b",
+                    q2: "c"
+                };
+                let score = 0;
+                
+                for (const [question, correctAnswer] of Object.entries(answers)) {
+                    const selected = document.querySelector(`input[name="${question}"]:checked`);
+                    if (selected && selected.value === correctAnswer) {
+                        score++;
+                    }
+                }
+                
+                document.getElementById("results").innerHTML = 
+                    `<h3>Your Score: ${score}/${Object.keys(answers).length}</h3>
+                     <p>Thanks for testing your knowledge about fraud prevention!</p>`;
+            }
+        </script>
+    </div>
+</body>
+</html>

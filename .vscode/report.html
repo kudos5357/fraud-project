@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Report Fraud</title>
+    <link rel="stylesheet" href="open.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header id="report-header">
+        <h1>Report Fraud</h1>
+        <h2>Your report can help others stay safe!</h2>
+    </header>
+
+    <div class="report-form-container">
+        <h3>Fraud Report Form</h3>
+        <p>Please fill out the form below to report any fraudulent activity. Include as much detail as possible.</p>
+        
+        <form action="submit_report.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="description">Description of the Fraud:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <label for="date">Date of Incident:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit" class="button">Submit Report</button>
+        </form>
+    </div>
+
+    <footer>
+        <h4>Contact us for more information</h4>
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=2541572435"><i class='bx bxl-whatsapp' style='color:#139e05'></i>Whatsapp</a>
+                            <a href="https://github.com/kudos5357/fraud-project"><i class='bx bxl-github' style='color:#080808'></i>Github</a>
+                            <a href="mailto:gichungedawn@gmail.com"><i class='bx bx-envelope' style='color:#ec0808'></i>Email</a>
+                            <a href="https://www.zetech.ac.ke/"><i class='bx bxs-school' style='color:#0e0e0e'></i>Zetech University</a>
+        </div>
+    </footer>
+</body>
+</html>
+
